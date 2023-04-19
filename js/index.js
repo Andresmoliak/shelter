@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.pets__slider').slick({
-      prevArrow: `<button type="button"><img src="../svg/Arrow-back.svg" alt="arrow-to-back"></button>`,
-      nextArrow: `<button type="button"><img src="../svg/arrow-next.svg" alt="arrow-to-next"></button>`,
+      prevArrow: `<button type="button"><img src="./svg/Arrow-back.svg" alt="arrow-to-back"></button>`,
+      nextArrow: `<button type="button"><img src="./svg/arrow-next.svg" alt="arrow-to-next"></button>`,
       slidesToShow: 3,
       slidesToScroll: 2,
     });

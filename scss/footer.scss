@@ -1,0 +1,61 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height, $color) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+.footer{
+    width: 100%;
+    background-image: url('../images/background.png');
+    background-size: cover;
+}
+.footer__wrapper{
+@include wrapper();
+@include flex(row, center);
+gap: 160px;
+padding: 40px 40px 0px 40px;
+box-sizing: border-box;
+}
+.footer__block{
+    @include flex(column, flex-start);
+    gap: 40px;
+    min-width: 278px;
+    max-width: 302px;
+}
+.footer__block h2{
+    @include font('gorgia', 35px, 130%, #ffff);
+}
+address{
+    @include flex(column, flex-start);
+    gap: 40px;
+}
+.footer__block__row{
+    @include flex(row,center);
+    gap: 20px;
+}
+.footer__block__row:last-child{
+    gap: 32px
+}
+.footer__block__row a{
+    @include font('gorgia', 20px, 115%, $color);
+}
+.footer__Wrapper img{
+    width: 300px;
+    height: 310px;
+}
