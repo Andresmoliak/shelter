@@ -1,0 +1,49 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height, $color) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+.help{
+    width: 100%;
+}
+.help__wrapper{
+    @include wrapper();
+    @include flex(column, center);
+    box-sizing: border-box;
+    padding: 80px 0px 100px 0px;
+}
+.help__wrapper h2{
+    width: 308px;
+    text-align: center;
+    @include font('gorgia', 35px, 130%, #545454);
+    margin-bottom: 60px;
+}
+.help__cards{
+    list-style-type: none;
+    width: 1026px;
+    @include font('gorgia', 20px, 115%, #545454);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 55px 120px;
+}
+.help__cards li{
+    @include flex(column, center);
+}

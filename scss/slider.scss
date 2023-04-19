@@ -1,0 +1,55 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+}
+
+.slick-slider {
+    width: 100%;
+    @include flex(row, center)
+}
+
+.slick-list {
+    overflow: hidden;
+    width: 990px;
+    margin: 0 auto;
+}
+
+.slick-track {
+    @include flex(row, center);
+}
+
+.slick-arrow {
+    width: 52px;
+    height: 52px;
+    background-color: $color;
+    border-radius: 50%;
+}
+
+.slick-arrow img {
+    width: 14px;
+    height: 6px;
+}
+
+.slick-arrow:active {
+    transform: scale(0.9);
+}
+.slick-slide {
+    max-width: 270px;
+    @include flex(column, center)
+}
