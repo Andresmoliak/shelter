@@ -1,3 +1,25 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height, $color) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
 .header {
     width: 100%;
     background-image: url('../images/background.png');
@@ -68,21 +90,11 @@
 .navigate__item:active {
     border-bottom: 3px solid #F1CDB3;
 }
+.header__burger{
+    display: none
+}
 
 //main-screen
-@mixin wrapper() {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@mixin flex ($direct, $align) {
-    display: flex;
-    justify-content: space-between;
-    align-items: $align;
-    flex-direction: $direct;
-}
-
 .main__wrapper {
     @include wrapper();
     @include flex(row, center);
@@ -124,7 +136,44 @@
     color: #292929;
 }
 
+.main__info a:hover {
+    background-color: #FDDCC4
+}
+
+.main__info a:active {
+    transform: scale(0.9)
+}
+
 .main__wrapper img {
     width: 698px;
     height: 728px;
+}
+
+@media (max-width: 1280px) {
+    .header__wrapper {
+        padding-top: calc(30px + (60 - 30) * ((100vw - 768px) / (1440 - 768)));
+        padding-left: calc(30px + (40 - 30) * ((100vw - 768px) / (1440 - 768)));
+        padding-bottom: calc(30px + (60 - 30) * ((100vw - 768px) / (1440 - 768)));
+        padding-right: calc(30px + (40 - 30) * ((100vw - 768px) / (1440 - 768)));
+    }
+    .header__logo {
+        margin-right: calc(81px + (573 - 81) * ((100vw - 768px) / (1440 - 768)));
+    }
+    
+    //main-screen
+    .main__wrapper {
+        @include flex(column, center);
+    }
+
+    .main__info {
+        width: calc(460px + (800 - 460) * ((100vw - 768px) / (1280 - 768)));
+        margin: 0px 0px 100px 0px;
+    }
+    .main__info a{
+        margin-left: calc(50% - 103.5px);
+    }
+    .main__wrapper img {
+        width: calc(569px + (698 - 569) * ((100vw - 768px) / (1440 - 768)));
+        height: calc(593px + (728 - 593) * ((100vw - 768px) / (1440 - 768)));
+    }
 }

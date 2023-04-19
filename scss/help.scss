@@ -47,3 +47,13 @@ $color: #f1cdb3;
 .help__cards li{
     @include flex(column, center);
 }
+@media (max-width: 1280px){
+    .help__cards{
+        width: calc(630px + (1026 - 630) * ((100vw - 768px) / (1280 - 768)));
+        column-gap: calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .help__cards li{
+        width: 170px;
+        @include flex(column, center)
+    }
+}

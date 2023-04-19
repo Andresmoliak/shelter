@@ -37,10 +37,13 @@ $color: #f1cdb3;
 .slick-arrow {
     width: 52px;
     height: 52px;
-    background-color: $color;
+    background-color: transparent;
+    border: 2px solid $color;
     border-radius: 50%;
 }
-
+.slick-arrow:hover{
+    background-color: $color;
+}
 .slick-arrow img {
     width: 14px;
     height: 6px;
@@ -52,4 +55,13 @@ $color: #f1cdb3;
 .slick-slide {
     max-width: 270px;
     @include flex(column, center)
+}
+
+@media (max-width: 1280px){
+    .slick-list {
+        width: calc(580px + (1000 - 580) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .slick-slide{
+        max-width: calc(270px + (350 - 270) * ((100vw - 768px) / (1280 - 768)));
+    }
 }

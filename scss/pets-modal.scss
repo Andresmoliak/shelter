@@ -64,6 +64,9 @@ $color: #f1cdb3;
     justify-content: center;
     align-items: center;
 }
+.modal__close:hover{
+    background-color: #f1cdb3;
+}
 .modal__close:active{
     transform: scale(0.9);
 }
@@ -117,4 +120,44 @@ $color: #f1cdb3;
 .modal__item dl{
     @include flex(row, center);
     display: inline-flex;
+}
+
+@media (max-width: 1280px){
+    .pets__modal__content{
+        width: calc(682px + (952 - 682) * ((100vw - 768px) / (1280 - 768)));
+        height: calc(402px + (552 - 402) * ((100vw - 768px) / (1280 - 768)));
+        position: fixed;
+        top: -100%;
+        left: calc(50% - calc(341px + (476 - 341) * ((100vw - 768px) / (1280 - 768))));
+        transition: .3s;
+    }
+    .pets__modal__content.active{
+        top: calc(50% - calc(201px + (276 - 201) * ((100vw - 768px) / (1280 - 768))));
+    }
+    .modal__content__window{
+        width: calc(630px + (900 - 630) * ((100vw - 768px) / (1280 - 768)));
+        height: calc(350px + (500 - 350) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .modal__content__window img{
+        width: calc(350px + (500 - 350) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .modal__content__info{
+        margin: 50px 20px 88px 29px;
+        margin-top: calc(10px + (50 - 10) * ((100vw - 768px) / (1280 - 768)));
+        margin-right: calc(9px + (20 - 9) * ((100vw - 768px) / (1280 - 768)));
+        margin-bottom: calc(37px + (88 - 37) * ((100vw - 768px) / (1280 - 768)));
+        margin-left: calc(11px + (29 - 11) * ((100vw - 768px) / (1280 - 768)));
+        width: calc(260px + (351 - 260) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .modal__content__info h3{
+        margin-bottom: calc(20px + (40 - 20) * ((100vw - 768px) / (1280 - 768)));
+    }
+    .modal__content__info p{
+        margin-bottom: calc(20px + (40 - 20) * ((100vw - 768px) / (1280 - 768)));
+        font-size: calc(13px + (2 + 2 * 0.7) * (100vw - 768px) / 1280);
+        line-height: 110%;
+    }
+    .modal__item{
+        margin-bottom: calc(5px + (10 - 5) * ((100vw - 768px) / (1280 - 768)));
+    }
 }

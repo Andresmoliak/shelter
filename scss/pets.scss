@@ -61,8 +61,16 @@ $color: #f1cdb3;
     justify-content: center;
     align-items: center;
 }
+.slick-slide button:hover{
+    background-color: $color;
+}
+.slick-slide button:active{
+    transform: scale(0.95);
+}
 .pets__slider{
     margin: 0px 0px 60px 0px;
+    box-sizing: border-box;
+    padding: 0px 10px;
 }
 .pets__button{
     width: 261px;
@@ -75,5 +83,9 @@ $color: #f1cdb3;
     align-items: center;
     margin-bottom: 100px;
 }
-
-
+.pets__button:hover{
+    background-color: #FDDCC4;
+}
+.pets__button:active{
+    transform: scale(0.95);
+}

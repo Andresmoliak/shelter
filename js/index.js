@@ -4,6 +4,15 @@ $(document).ready(function(){
       nextArrow: `<button type="button"><img src="./svg/arrow-next.svg" alt="arrow-to-next"></button>`,
       slidesToShow: 3,
       slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 1280, 
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        }
+      ]
     });
   });
 
