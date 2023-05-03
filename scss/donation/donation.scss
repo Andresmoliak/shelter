@@ -1,6 +1,6 @@
 @mixin wrapper() {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -79,5 +79,35 @@ margin-bottom: 20px;
     }
     .donation__info{
         margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 766px){
+    .donation__wrapper{ 
+    padding-top: calc(42px + (132 - 42) * (100vw - 320px) / (766 - 320));
+    padding-bottom: calc(42px + (132 - 42) * (100vw - 320px) / (766 - 320));
+    padding-left: 10px;
+    padding-right: 10px;
+}
+    .donation__wrapper img{
+    width: calc(260px + (505 - 260) * ((100vw - 320px) / (766 - 320)));
+    height: calc(135px + (261 - 135) * ((100vw - 320px) / (766 - 320)))
+    }
+    .donation__info{
+        width: calc(300px + (380 - 300) * ((100vw - 320px) / (766 - 320)));
+        align-items: center;
+    }
+    .donation__info h2{
+        font-size: calc(25px + (10 + 10 * 0.7) * ((100vw - 320px) / 766));
+        text-align: center;
+    }
+    .donation__info__card{
+    width: calc(281px + (349 - 281) * ((100vw - 320px) / (766 - 320)));
+    font-size: calc(15px + (5 + 5 * 0.7) * (100vw - 320px) / 766);
+    }
+    .donation__info__card img{
+        width: 30px;
+        height: 23px;
+        margin-left: 15px;
     }
 }

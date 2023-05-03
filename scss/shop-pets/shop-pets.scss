@@ -1,0 +1,148 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height, $color) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+.shop{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.shop__wrapper{
+    @include wrapper();
+    @include flex(column, center);
+    box-sizing: border-box;
+    padding: 80px 40px;
+}
+.shop__title{
+    width: 400px;
+    text-align: center;
+    margin-bottom: 45px;
+    @include font('gorgia', 35px, 130%,#545454)
+}
+.shop__slider{
+    .pets__card__wrapper{
+        width: 270px;
+        height: 435px;
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 135px);
+    }
+    .pets__slider__card{
+        height: 450px;
+        position: relative;
+    }
+}
+
+.shop__slider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px;
+    .slick-list{
+        max-width: 1200px;
+        width: 100%;
+        overflow: hidden;
+        order: 1;
+    }
+    .slick-track{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row
+    }
+}
+
+.shop__button{
+    width: 52px;
+    height: 52px;
+    border: 2px solid $color;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:active{
+        transform: scale(0.9);
+    }
+}
+.prev{
+    order: 2;
+    img{
+        transform: rotate(180deg);
+    }
+}
+
+.slick-dots{
+    list-style-type: none;
+    @include flex(row, center);
+    order: 3;
+    gap: 15px;
+    &:active{
+        transform: scale(0.9);
+    }
+}
+.slick-dots li{
+    width: 52px;
+    height: 52px;
+    border: 2px solid $color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.next{
+    order: 4;
+}
+.slick-disabled{
+    opacity: 0;
+}
+.slick-dots{
+    .slick-active{
+        background-color: $color;
+    }
+    button{
+     background-color: transparent;
+     @include font('gorgia', 20px, 115%, black)
+    }
+}
+
+@media (max-width: 766px){
+    .slick-dots li{
+        width: 35px;
+        height: 35px;
+    }
+    .shop__button{
+        width: 35px;
+        height: 35px;
+    }
+    .shop__slider{
+        gap: 10px;
+    }
+}
+@media (min-width: 1000px){
+    .prev:hover{
+        background-color: $color;
+    }
+    .next:hover{
+        background-color: $color;
+    }
+}

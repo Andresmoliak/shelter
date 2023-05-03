@@ -1,0 +1,22 @@
+.shop__header{
+    background-image: none;
+    background-color: #FFFFFF;
+}
+.shop__logo h1{
+    color: black;
+}
+.shop__logo p{
+    color: black;
+}
+.shop__navigate__item a{
+    color: black;
+}
+.outside span{
+background-color: black;
+}
+
+@media (max-width: 766px){
+    .shop__navigate__item a{
+        color: #FFFFFF;
+    }
+}

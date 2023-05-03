@@ -1,0 +1,141 @@
+@mixin wrapper() {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+$color: #f1cdb3;
+
+@mixin flex ($direct, $align) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+    flex-direction: $direct;
+}
+
+@mixin font ($fam, $size, $height, $color) {
+    font-family: $fam;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+.pets {
+    width: 100%;
+    background-color: #F6F6F6;
+}
+
+.pets__wrapper {
+    @include wrapper();
+    @include flex(column, center);
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.pets__wrapper h2 {
+    width: 400px;
+    text-align: center;
+    @include font('gorgia', 35px, 130%, #545454);
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.pets__card__wrapper{
+    width: 280px;
+    background-color: #FAFAFA;
+}
+
+.pets__slider__card img {
+    width: 270px;
+    height: 270px;
+    margin-bottom: 30px;
+}
+
+.pets__slider__card h3 {
+    @include font('gorgia', 20px, 115%, #545454);
+    margin-bottom: 30px;
+}
+
+.pets__slider__card button {
+    background-color: transparent;
+    width: 187px;
+    height: 52px;
+    border: 2px solid $color;
+    border-radius: 100px;
+    margin-bottom: 30px;
+    @include font('gorgia', 17px, 130%, #292929);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pets__slider__card button:active {
+    transform: scale(0.95);
+}
+
+.pets__slider {
+    width: 100%;
+    @include flex(row, center);
+    margin: 0px 0px 60px 0px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.pets__button {
+    width: 261px;
+    height: 52px;
+    border-radius: 100px;
+    background-color: $color;
+    @include font('gorgia', 17px, 130%, #292929);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.pets__button:active {
+    transform: scale(0.95);
+}
+
+@media (min-width: 1000px) {
+    .pets__slider__card button:hover {
+        background-color: $color;
+    }
+
+    .pets__button:hover {
+        background-color: #FDDCC4;
+    }
+}
+
+@media (max-width: 766px) {
+    .pets__wrapper {
+        padding-top: calc(42px + (80 - 42) * ((100vw - 320px) / (766 - 320)));
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pets__wrapper h2 {
+        width: calc(300px + (400 - 300) * ((100vw - 320px) / (766 - 320)));
+        font-size: calc(25px + (10 + 10 * 0.7) * (100vw - 320px) / 766);
+        margin-bottom: calc(42px + (60 - 42) * ((100vw - 320px) / (766 - 320)))
+    }
+
+    .pets__slider {
+        margin-bottom: calc(42px + (60 - 42) * ((100vw - 320px) / (766 - 320)));
+        padding: 0px 15px;
+        justify-content: center;
+    }
+
+    .pets__slider button:first-child{
+        order: 2;
+        margin-right: 80 / 270 * 100%;
+    }
+    .pets__slider button:last-child{
+        order: 3;
+    }
+    .pets__button{
+        margin-bottom: calc(42px + (100 - 42) * ((100vw - 320px) / (766 - 320)));
+    }
+ 
+}
