@@ -127,7 +127,7 @@ if (burgerButtons[0] !== null) {
   )
 }
 
-if(navLinks.length > 0){
+if(window.innerWidth <= 765 & navLinks.length > 0){
   navLinks.forEach((el) => {
     el.addEventListener('click', () => {
       burger.forEach((elem) => {
