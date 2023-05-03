@@ -64,12 +64,11 @@ gap: 40px;
 @include flex(row, center);
 gap: 20px;
 @include font('gorgia',20px , 115%, $color);
-
 }
 
 .footer__address__location{
-    @include flex(column, flex-start);
-    gap: 32px;
+@include flex(column, flex-start);
+gap: 32px;
 }
 .footer__location__link{
 @include flex(row, center);

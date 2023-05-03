@@ -246,8 +246,8 @@ $color: #f1cdb3;
 }
 .nav__wrapper.active{
     right: 0px;
-    max-width: none;
-    transition: .7s
+    max-width: 320px;
+    transition: .3s
 }
     .header__burger {
         @include flex(column, center);
